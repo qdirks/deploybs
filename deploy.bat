@@ -26,6 +26,7 @@ git merge origin/fix-ui-external-url >nul
 git merge origin/fix-scripts >nul
 git merge origin/fix-logger >nul
 git merge origin/fix-gitignore >nul
+git merge origin/fix-cwd-option >nul
 
 echo Building...
 cmd /c "npm install" >nul
