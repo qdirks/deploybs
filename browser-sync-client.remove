@@ -1,0 +1,10 @@
+.gitignore
+_dist
+lib
+node_modules
+test
+LICENSE-MIT
+.travis.yml
+package-lock.json
+tsconfig.json
+webpack.config.js

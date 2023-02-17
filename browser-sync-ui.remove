@@ -1,0 +1,11 @@
+.gitignore
+node_modules
+src
+tasks
+test
+.editorconfig
+.jshintrc
+example.stream.js
+webpack.config.js
+crossbow.yaml
+package-lock.json

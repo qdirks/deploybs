@@ -1,0 +1,8 @@
+.gitignore
+lib
+node_modules
+test
+.prettierignore
+lodash.custom.min.js
+tsconfig.json
+package-lock.json
