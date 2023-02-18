@@ -27,6 +27,11 @@ git merge origin/fix-scripts >nul
 git merge origin/fix-logger >nul
 git merge origin/fix-gitignore >nul
 git merge origin/fix-cwd-option >nul
+git merge origin/fix-tsconfig >nul
+
+rmdir /s /q packages\browser-sync\dist >nul 2>&1
+rmdir /s /q packages\browser-sync-client\dist >nul 2>&1
+rmdir /s /q packages\browser-sync-client\_dist >nul 2>&1
 
 echo Building...
 cmd /c "npm install" >nul
