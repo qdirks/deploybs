@@ -25,6 +25,7 @@ transform("packages/browser-sync-ui/public/js/app.js").push(
 });
 Object.keys(transforms).forEach(fileName=>{
     fs.readFile(fileName, (err, buf)=>{
+        if (err) return;
         const writeStr = transforms[fileName].reduce((pv, cv)=>{
             return cv(pv);
         }, buf.toString());
