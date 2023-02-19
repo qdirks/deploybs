@@ -7,6 +7,4 @@ if not exist packages (
     exit /b
 )
 
-git restore packages/browser-sync-client/package.json
-git restore packages/browser-sync-ui/package.json
-git restore packages/browser-sync/package.json
+@REM delete the dist directories
