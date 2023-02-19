@@ -3,7 +3,9 @@
 @echo off
 setlocal
 set patched=patched
-if %1==debug set debug=true
+if %1==debug (
+    set debug=true
+)
 
 call _create
 
