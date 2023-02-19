@@ -3,7 +3,11 @@ setlocal
 
 if not exist packages cd browser-sync
 if not exist packages (
-    echo No packages directory. Check your current working directory. Script will now exit.
+    cd %~dp0
+    cd browser-sync
+)
+if not exist packages (
+    echo Couldn't find packages directory.
     exit /b
 )
 
