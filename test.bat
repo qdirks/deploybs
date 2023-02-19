@@ -1,3 +1,5 @@
+@REM This runs a simple test of the build
+
 @echo off
 setlocal
 call %~dp0_found

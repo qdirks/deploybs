@@ -1,4 +1,5 @@
-@echo off
+@REM This is used by calling to scripts to get into the correct directory.
+@REM You probably don't need to call this directly.
 
 if not exist packages cd browser-sync >nul 2>&1
 if not exist packages (

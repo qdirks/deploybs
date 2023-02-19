@@ -1,15 +1,11 @@
+@REM Build the local patched branch
+
 @echo off
 setlocal
 set patched=patched
+if %1==debug set debug=true
 
-if not exist packages cd browser-sync
-if not exist packages (
-    cd %~dp0
-    if not exist browser-sync (
-        git clone https://github.com/qdirks/browser-sync.git
-    )
-    cd browser-sync
-)
+call _create
 
 git fetch origin >nul 2>&1
 git switch -f master
@@ -22,7 +18,9 @@ git merge origin/fix-scripts >nul
 git merge origin/fix-logger >nul
 git merge origin/fix-gitignore >nul
 git merge origin/fix-cwd-option >nul
-git merge origin/fix-tsconfig >nul
+if not defined debug (
+    git merge origin/fix-tsconfig >nul
+)
 
 rmdir /s /q packages\browser-sync\dist >nul 2>&1
 rmdir /s /q packages\browser-sync-client\dist >nul 2>&1
@@ -34,5 +32,5 @@ cmd /c "npm run build:cmd" >nul
 
 echo Fixing files and updating references...
 node ..\fixfiles.js >nul
-
-call ..\restore
+git add .
+git commit -m "save"

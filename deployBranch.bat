@@ -1,3 +1,6 @@
+@REM You probably don't need to call this directly. This file contains the method of deploying the package as a git branch.
+@REM Note: This is called by deploy.bat
+
 @echo off
 setlocal
 
@@ -22,6 +25,6 @@ git restore --staged LICENSE
 
 @REM Deploy package as branch
 git switch -c %package_name%
-git commit -m "Deploy %package_name% as git branch so that npm can install it." >nul
+git commit -m "Deploy %package_name% as git branch" >nul
 echo Pushing to remote branch %package_name%
 git push -u origin %package_name% >nul 2>&1

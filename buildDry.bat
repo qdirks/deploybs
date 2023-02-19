@@ -1,3 +1,6 @@
+@REM Build browser-sync without doing anything to the git branches.
+@REM Note: this requires that the build at least have the fix-scripts branch merged
+
 @echo off
 setlocal
 

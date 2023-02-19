@@ -1,3 +1,4 @@
+@REM You may need to call this after building
 @echo off
 setlocal
 call %~dp0_found
