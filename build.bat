@@ -16,11 +16,13 @@ git branch -D %patched%
 git switch -c %patched%
 echo Merging fixes...
 git merge origin/fix-ui-external-url >nul
-git merge origin/fix-scripts >nul
 git merge origin/fix-logger >nul
 git merge origin/fix-gitignore >nul
 git merge origin/fix-cwd-option >nul
-if not defined debug (
+if defined debug (
+    git merge origin/fix-scripts-debug >nul
+) else (
+    git merge origin/fix-scripts >nul
     git merge origin/fix-tsconfig >nul
 )
 
