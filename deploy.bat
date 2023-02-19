@@ -50,3 +50,5 @@ rmdir /s /q packages\browser-sync\.git
 rmdir /s /q packages\browser-sync-ui\.git
 rmdir /s /q packages\browser-sync-client\.git
 echo ---- operation complete
+
+call ..\restore
