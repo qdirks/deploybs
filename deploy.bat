@@ -33,6 +33,9 @@ call :restore browser-sync
 call :restore browser-sync-client
 call :restore browser-sync-ui
 
+git add .
+git commit -m "save"
+
 exit /b
 :restore
     git checkout origin/fix-scripts packages\%*\package.json

@@ -3,7 +3,7 @@
 @echo off
 setlocal
 set patched=patched
-if %1==debug (
+if -%1-==-debug- (
     set debug=true
 )
 
