@@ -1,14 +1,7 @@
 @echo off
 setlocal
-
-if not exist packages cd browser-sync
-if not exist packages (
-    cd %~dp0
-    cd browser-sync
-)
-if not exist packages (
-    echo Couldn't find packages directory.
-    exit /b
-)
+call %~dp0_found
+if %errorlevel%==1 exit /b 1
+@REM browser-sync directory assumed
 
 node ..\fixapp.js
