@@ -31,7 +31,7 @@ getTransforms("packages/browser-sync-ui/public/js/app.js").push(
 Object.keys(transformsMap).forEach(fileName=>{
     fs.readFile(fileName, (err, buf)=>!err &&
     fs.writeFile(fileName, transformsMap[fileName].reduce(
-        (pv, cv)=>cv(pv), buf.toString()), ()=>{} ));
+        (str, tf)=>tf(str), buf.toString()), ()=>{} ));
 });
 /** @param {string} str */
 function fixLineEndings(str) {
